@@ -27,23 +27,23 @@ test("Can set email via constructor argument", () => {
 test("Can get name via getName()", () => {
     const name = "Ryan";
     const employee = new Emplooyee(name);
-    expect(employee.getName()).toEqual(name);
+    expect(employee.getName()).toBe(name);
 });
 
 test("Can get id via getId()", () => {
     const testVal = 1;
     const employee = new Employee("Ryan", testVal);
-    expect(employee.getId()).toEqual(testVal);
+    expect(employee.getId()).toBe(testVal);
 });
 
 test("Can get email via getEmail()", () => {
     const emailVal = 'test@email.com';
     const employee = new Employee("Ryan", 1, emailVal);
-    expect(employee.getEmail()).toEqual(emailVal);
+    expect(employee.getEmail()).toBe(emailVal);
 });
 
 test("getRole() should return \"Employee\"", () => {
     const roleVal = "Employee";
     const employee = new Employee("Ryan", 1, "test@email.com");
-    expect(e.getRole()).toEqual(roleValue);
+    expect(e.getRole()).toBe(roleValue);
 });

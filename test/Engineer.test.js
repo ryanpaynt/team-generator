@@ -3,7 +3,9 @@
 const Engineer = require("../lib/Engineer");
 
 test("Can set GitHUb account via constructor", () => {
-
+    const ghLink = 'www.link@gitHub.com';
+    const eng = Engineer("Ryan", 1, "test@email.com", ghLink);
+    expect(eng.github()).toBe(ghLink);
 });
 
 test("getRole() should return \"Engineer\"", () => {
