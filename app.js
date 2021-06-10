@@ -51,7 +51,7 @@ const init = () => {
             },
         ])
         .then( (response) => {
-            const managerObj = new Manager(response.manName, response.manID, response.manEmail, response.manOffNum);
+            const managerObj = new Manager(response.manName, parseInt(response.manID), response.manEmail, response.manOffNum);
             employeeArr.push(managerObj);
             nextPrompt();
         });
@@ -123,7 +123,7 @@ const engineerPrompt = () =>{
         },
     ])
     .then( (response) => {
-        const engineerObj = new Engineer(response.enName, response.enID, response.enEmail, response.enGH);
+        const engineerObj = new Engineer(response.enName, pareseInt(response.enID), response.enEmail, response.enGH);
         employeeArr.push(engineerObj);
         nextPrompt();
     });
@@ -167,7 +167,7 @@ const renderEmpList = (employeeArr) => {
     });
 }
 
-inits();
+init();
 
 
 // Write code to use inquirer to gather information about the development team members,
