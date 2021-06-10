@@ -1,14 +1,14 @@
 {
   "name": "employee-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "team-generator",
   "main": "app.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node app"
   },
   "keywords": [],
@@ -16,5 +16,16 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^8.1.0"
-  }
+  },
+  "devDependencies": {
+    "jest": "^27.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanpaynt/team-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanpaynt/team-generator/issues"
+  },
+  "homepage": "https://github.com/ryanpaynt/team-generator#readme"
 }
