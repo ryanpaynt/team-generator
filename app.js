@@ -11,14 +11,14 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
-const { inherits } = require("util");
+// const { inherits } = require("util");
 
 var employeeArr = [];
 
-var ifEmpty = (input) => {
-    const check = input === "" ? 'Please enter a value!' : false
-    return check;
-}
+// var ifEmpty = (input) => {
+//     const check = input === "" ? 'Please enter a value!' : false
+//     return check;
+// }
 
 
 const init = () => {
@@ -28,30 +28,31 @@ const init = () => {
             {
                 type: 'input',
                 message: "What is the Manager's name?",
-                name: "manName",
+                name: "name",
                 //validate: ""
             },
             {
                 type: 'input',
                 message: "What is the Manager's ID number?",
-                name: "manID",
+                name: "id",
                 //validate: ""
             },
             {
                 type: 'input',
                 message: "What is the Manager's email address?",
-                name: "manEmail",
+                name: "email",
                 //validate: ""
             },
             {
                 type: 'input',
                 message: "What is the Manager's unique office number?",
-                name: 'manOffNum',
+                name: 'number',
                 //validate: ''
             },
         ])
         .then( (response) => {
-            const managerObj = new Manager(response.manName, parseInt(response.manID), response.manEmail, response.manOffNum);
+            const managerObj = new Manager(response.name, parseInt(response.id), response.email, parseInt(response.number));
+            console.log(managerObj);
             employeeArr.push(managerObj);
             nextPrompt();
         });
@@ -64,30 +65,31 @@ const internPrompt = () =>{
         {
             type: 'input',
             message: "What is the Intern's name?",
-            name: "intName",
+            name: "name",
             //validate: ""
         },
         {
             type: 'input',
             message: "What is the Intern's ID number?",
-            name: "intID",
+            name: "id",
             //validate: ""
         },
         {
             type: 'input',
             message: "What is the Intern's email address?",
-            name: "intEmail",
+            name: "email",
             //validate: ""
         },
         {
             type: 'input',
             message: "What is the Intern's school name?",
-            name: 'intSchool',
+            name: 'school',
             //validate: ''
         },
     ])
     .then( (response) => {
-        const internObj = new Intern(response.intName, response.intID, response.intEmail, response.intSchool);
+        const internObj = new Intern(response.name, parseInt(response.id), response.email, response.school);
+        console.log(internObj);
         employeeArr.push(internObj);
         nextPrompt();
     });
@@ -100,30 +102,31 @@ const engineerPrompt = () =>{
         {
             type: 'input',
             message: "What is the Engineer's name?",
-            name: "enName",
+            name: "name",
             //validate: ""
         },
         {
             type: 'input',
             message: "What is the Engineer's ID number?",
-            name: "enID",
+            name: "id",
             //validate: ""
         },
         {
             type: 'input',
             message: "What is the Engineer's email address?",
-            name: "enEmail",
+            name: "email",
             //validate: ""
         },
         {
             type: 'input',
             message: "What is the Engineer's GitHub username?",
-            name: 'enGH',
+            name: 'gitHub',
             //validate: ''
         },
     ])
     .then( (response) => {
-        const engineerObj = new Engineer(response.enName, pareseInt(response.enID), response.enEmail, response.enGH);
+        const engineerObj = new Engineer(response.name, parseInt(response.id), response.email, response.gitHub);
+        console.log(engineerObj);
         employeeArr.push(engineerObj);
         nextPrompt();
     });
